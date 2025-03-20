@@ -1,4 +1,4 @@
-package com.pryecto.agencia_de_viaje.entity;
+package com.pryecto.museo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

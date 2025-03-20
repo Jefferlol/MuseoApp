@@ -1,10 +1,10 @@
-package com.pryecto.agencia_de_viaje.controller;
+package com.pryecto.museo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.pryecto.agencia_de_viaje.entity.Museo;
-import com.pryecto.agencia_de_viaje.service.MuseoService;
+import com.pryecto.museo.entity.Museo;
+import com.pryecto.museo.service.MuseoService;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.pryecto.agencia_de_viaje;
+package com.pryecto.museo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AgenciaDeViajeApplicationTests {
+class MuseoApplicationTests {
 
 	@Test
 	void contextLoads() {

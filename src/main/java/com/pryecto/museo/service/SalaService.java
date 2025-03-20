@@ -1,7 +1,8 @@
-package com.pryecto.agencia_de_viaje.service;
+package com.pryecto.museo.service;
 
-import com.pryecto.agencia_de_viaje.entity.Sala;
-import com.pryecto.agencia_de_viaje.repository.SalaRepository;
+import com.pryecto.museo.entity.Sala;
+import com.pryecto.museo.repository.SalaRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

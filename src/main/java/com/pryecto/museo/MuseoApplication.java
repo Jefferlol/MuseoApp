@@ -1,13 +1,13 @@
-package com.pryecto.agencia_de_viaje;
+package com.pryecto.museo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AgenciaDeViajeApplication {
+public class MuseoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AgenciaDeViajeApplication.class, args);
+		SpringApplication.run(MuseoApplication.class, args);
 	}
 
 }

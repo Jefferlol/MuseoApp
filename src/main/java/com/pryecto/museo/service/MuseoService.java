@@ -1,10 +1,10 @@
-package com.pryecto.agencia_de_viaje.service;
+package com.pryecto.museo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pryecto.agencia_de_viaje.entity.Museo;
-import com.pryecto.agencia_de_viaje.repository.MuseoRepository;
+import com.pryecto.museo.entity.Museo;
+import com.pryecto.museo.repository.MuseoRepository;
 
 import java.util.List;
 

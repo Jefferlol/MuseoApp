@@ -1,7 +1,8 @@
-package com.pryecto.agencia_de_viaje.controller;
+package com.pryecto.museo.controller;
 
-import com.pryecto.agencia_de_viaje.entity.Sala;
-import com.pryecto.agencia_de_viaje.service.SalaService;
+import com.pryecto.museo.entity.Sala;
+import com.pryecto.museo.service.SalaService;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
