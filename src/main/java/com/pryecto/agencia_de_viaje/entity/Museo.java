@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="museos")
 @NoArgsConstructor
@@ -18,7 +20,8 @@ public class Museo {
     
     private String nombre;
     private String direccion;
-
+    
+    @JsonIgnore
     @OneToMany(mappedBy = "museo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Sala> salas;
 }
