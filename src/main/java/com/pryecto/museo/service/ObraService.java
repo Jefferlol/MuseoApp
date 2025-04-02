@@ -8,10 +8,19 @@ import java.util.List;
 
 @Service
 public class ObraService {
+    private static ObraService instance;
     private final ObraRepository obraRepository;
 
-    public ObraService(ObraRepository obraRepository) {
+    private ObraService(ObraRepository obraRepository) {
         this.obraRepository = obraRepository;
+    }
+
+    
+    public static synchronized ObraService getInstance(ObraRepository obraRepository) {
+        if (instance == null) {
+            instance = new ObraService(obraRepository);
+        }
+        return instance;
     }
 
     public List<Obra> obtenerTodasLasObras() {

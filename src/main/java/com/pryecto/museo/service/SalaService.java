@@ -2,7 +2,6 @@ package com.pryecto.museo.service;
 
 import com.pryecto.museo.entity.Sala;
 import com.pryecto.museo.repository.SalaRepository;
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +9,19 @@ import java.util.Optional;
 
 @Service
 public class SalaService {
-
+    private static SalaService instance;
     private final SalaRepository salaRepository;
 
-    public SalaService(SalaRepository salaRepository) {
+    private SalaService(SalaRepository salaRepository) {
         this.salaRepository = salaRepository;
+    }
+
+    // Método para obtener la única instancia de la clase (Singleton)
+    public static synchronized SalaService getInstance(SalaRepository salaRepository) {
+        if (instance == null) {
+            instance = new SalaService(salaRepository);
+        }
+        return instance;
     }
 
     public List<Sala> obtenerTodasLasSalas() {
