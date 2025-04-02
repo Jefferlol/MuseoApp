@@ -2,6 +2,9 @@ package com.pryecto.museo.controller;
 
 import com.pryecto.museo.entity.Artista;
 import com.pryecto.museo.service.ArtistaService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +25,9 @@ public class ArtistaController {
     }
 
     @PostMapping
-    public ResponseEntity<Artista> crearArtista(@RequestBody Artista artista) {
+    public ResponseEntity<Artista> crearArtista(@Valid @RequestBody Artista artista) {
         Artista nuevoArtista = artistaService.crearArtista(artista);
         return ResponseEntity.ok(nuevoArtista);
     }
+
 }

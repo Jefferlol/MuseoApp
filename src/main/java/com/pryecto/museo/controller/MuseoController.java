@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import com.pryecto.museo.entity.Museo;
 import com.pryecto.museo.service.MuseoService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -21,7 +23,7 @@ public class MuseoController {
     }
 
     @PostMapping
-    public Museo crearMuseo(@RequestBody Museo museo) {
+    public Museo crearMuseo(@Valid @RequestBody Museo museo) {
         return museoService.crearMuseo(museo);
     }
 }

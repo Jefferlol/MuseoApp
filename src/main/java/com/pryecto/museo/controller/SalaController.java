@@ -3,6 +3,8 @@ package com.pryecto.museo.controller;
 import com.pryecto.museo.entity.Sala;
 import com.pryecto.museo.service.SalaService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,19 +27,20 @@ public class SalaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Sala> obtenerSalaPorId(@PathVariable Long id) {
+    public ResponseEntity<Sala> obtenerSalaPorId(@Valid @PathVariable Long id) {
         Optional<Sala> sala = salaService.obtenerSalaPorId(id);
         return sala.map(ResponseEntity::ok)
                    .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Sala crearSala(@RequestBody Sala sala) {
-        return salaService.crearSala(sala);
+    public ResponseEntity<Sala> crearSala(@Valid @RequestBody Sala sala) {
+        Sala nuevaSala = salaService.crearSala(sala);
+        return ResponseEntity.ok(nuevaSala);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Sala> actualizarSala(@PathVariable Long id, @RequestBody Sala sala) {
+    public ResponseEntity<Sala> actualizarSala(@PathVariable Long id, @Valid @RequestBody Sala sala) {
         try {
             Sala salaActualizada = salaService.actualizarSala(id, sala);
             return ResponseEntity.ok(salaActualizada);
@@ -45,6 +48,7 @@ public class SalaController {
             return ResponseEntity.notFound().build();
         }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarSala(@PathVariable Long id) {

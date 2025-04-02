@@ -1,6 +1,7 @@
 package com.pryecto.museo.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,14 @@ public class Artista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    @NotBlank(message = "El nombre del artista no puede estar vacío")
     private String nombre;
+
+    @NotBlank(message = "La nacionalidad del artista no puede estar vacía")
     private String nacionalidad;
-    
-    @JsonIgnore  // Evita la recursión infinita en la serialización
+
+    @JsonIgnore  
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Obra> obras;
 }
