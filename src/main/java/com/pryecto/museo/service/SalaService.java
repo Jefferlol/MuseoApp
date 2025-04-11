@@ -16,7 +16,8 @@ public class SalaService {
         this.salaRepository = salaRepository;
     }
 
-    // Método para obtener la única instancia de la clase (Singleton)
+    
+    
     public static synchronized SalaService getInstance(SalaRepository salaRepository) {
         if (instance == null) {
             instance = new SalaService(salaRepository);
